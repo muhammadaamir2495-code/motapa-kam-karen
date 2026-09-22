@@ -1,9 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import Script from "next/script";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { getRelatedPosts, posts } from "@/lib/posts";
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://merasehat.example.com";
+import { siteUrl } from "@/lib/siteUrl";
 
 export default function BlogLayout({ title, subtitle, slug, children }) {
   const relatedPosts = getRelatedPosts(slug);
@@ -28,20 +29,7 @@ export default function BlogLayout({ title, subtitle, slug, children }) {
       <Script id={`article-jsonld-${slug}`} type="application/ld+json" strategy="afterInteractive">
         {JSON.stringify(articleJsonLd)}
       </Script>
-      <header className="border-b border-line bg-surface/70 backdrop-blur">
-        <div className="max-w-2xl mx-auto px-5 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <Link href="/" className="font-display text-lg text-ink">MeraSehat</Link>
-            <span className="text-muted">/</span>
-            <Link href="/blog" className="text-sm font-medium text-primary hover:text-primary-dark">
-              Articles
-            </Link>
-          </div>
-          <Link href="/#tool" className="text-sm font-medium text-primary hover:text-primary-dark">
-            Free Plan Banayen
-          </Link>
-        </div>
-      </header>
+      <Header />
 
       <article className="max-w-2xl mx-auto px-5 py-12">
         <nav aria-label="Breadcrumb" className="mb-6 flex flex-wrap items-center gap-2 text-xs text-muted">
@@ -105,11 +93,7 @@ export default function BlogLayout({ title, subtitle, slug, children }) {
         </div>
       </article>
 
-      <footer className="border-t border-line py-8">
-        <p className="text-center text-xs text-muted">
-          MeraSehat — general guidance only, medical advice nahi.
-        </p>
-      </footer>
+      <Footer />
     </main>
   );
 }

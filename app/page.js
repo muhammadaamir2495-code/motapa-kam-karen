@@ -6,6 +6,8 @@ import Image from "next/image";
 import PlanForm from "@/components/PlanForm";
 import PlanResult from "@/components/PlanResult";
 import InchesToCmConverter from "@/components/InchesToCmConverter";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { generatePlan } from "@/lib/generatePlan";
 import { posts } from "@/lib/posts";
 
@@ -31,14 +33,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-bg">
-      <header className="no-print border-b border-line bg-surface/70 backdrop-blur">
-        <div className="max-w-3xl mx-auto px-5 py-4 flex items-center justify-between">
-          <span className="font-display text-lg text-ink">MeraSehat</span>
-          <Link href="/blog" className="text-sm font-medium text-primary hover:text-primary-dark">
-            Articles
-          </Link>
-        </div>
-      </header>
+      <Header />
 
       <section className="no-print max-w-3xl mx-auto px-5 pt-14 pb-10 grid sm:grid-cols-[1fr_auto] gap-8 items-center">
         <div>
@@ -122,11 +117,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="no-print border-t border-line py-8">
-        <p className="text-center text-xs text-muted">
-          MeraSehat — general guidance only, medical advice nahi.
-        </p>
-      </footer>
+      <Footer />
     </main>
   );
 }

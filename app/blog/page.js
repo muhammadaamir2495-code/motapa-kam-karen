@@ -1,5 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { posts } from "@/lib/posts";
 
 export const metadata = {
@@ -16,14 +18,7 @@ const categories = [
 export default function BlogIndex() {
   return (
     <main className="min-h-screen bg-bg">
-      <header className="border-b border-line bg-surface/70 backdrop-blur">
-        <div className="max-w-2xl mx-auto px-5 py-4 flex items-center justify-between">
-          <Link href="/" className="font-display text-lg text-ink">MeraSehat</Link>
-          <Link href="/#tool" className="text-sm font-medium text-primary hover:text-primary-dark">
-            Free Plan Banayen
-          </Link>
-        </div>
-      </header>
+      <Header />
 
       <section className="max-w-2xl mx-auto px-5 py-12">
         <h1 className="font-display text-3xl sm:text-4xl text-ink mb-5">Sab Articles</h1>
@@ -70,9 +65,7 @@ export default function BlogIndex() {
         </div>
       </section>
 
-      <footer className="border-t border-line py-8">
-        <p className="text-center text-xs text-muted">MeraSehat — general guidance only, medical advice nahi.</p>
-      </footer>
+      <Footer />
     </main>
   );
 }

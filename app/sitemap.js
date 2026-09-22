@@ -1,9 +1,8 @@
 import { posts } from "@/lib/posts";
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://merasehat.example.com";
+import { siteUrl } from "@/lib/siteUrl";
 
 export default function sitemap() {
-  const staticRoutes = ["", "/blog"].map((path) => ({
+  const staticRoutes = ["", "/blog", "/about", "/contact", "/privacy-policy", "/disclaimer"].map((path) => ({
     url: `${siteUrl}${path}`,
     lastModified: new Date(),
   }));

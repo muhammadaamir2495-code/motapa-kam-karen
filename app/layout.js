@@ -1,9 +1,9 @@
 import Script from "next/script";
 import { Poppins, Inter } from "next/font/google";
+import { siteUrl } from "@/lib/siteUrl";
 import "./globals.css";
 
 const gaId = process.env.NEXT_PUBLIC_GA_ID;
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://merasehat.example.com";
 
 const poppins = Poppins({
   subsets: ["latin"],
