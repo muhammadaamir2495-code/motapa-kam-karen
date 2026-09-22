@@ -4,6 +4,7 @@ export const metadata = {
   title: "Dry Skin Ke Liye Sahi Facewash Kaise Chunein | MeraSehat",
   description:
     "Galat facewash dry skin ko aur kharab kar deta hai. Kya dekhna chahiye aur kya avoid karna chahiye.",
+  alternates: { canonical: "/blog/facewash-dry-skin-ke-liye" },
 };
 
 export default function Page() {

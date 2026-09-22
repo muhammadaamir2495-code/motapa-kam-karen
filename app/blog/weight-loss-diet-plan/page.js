@@ -4,6 +4,7 @@ export const metadata = {
   title: "Weight Loss Diet Plan — Ek Din Ka Sample Chart | MeraSehat",
   description:
     "Ek simple, follow karne mein asaan weight loss diet plan — nashta, lunch, dinner aur snacks ka poora breakdown.",
+  alternates: { canonical: "/blog/weight-loss-diet-plan" },
 };
 
 export default function Page() {

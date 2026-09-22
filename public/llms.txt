@@ -1,0 +1,24 @@
+# MeraSehat
+
+> Free Roman Urdu diet, weight-loss aur skin-care planner tool for Pakistani/Indian users, plus a blog of practical, non-medical guides on the same topics.
+
+MeraSehat lets a user enter age, daily routine, sleep schedule aur skin type — and instantly get a personal diet + skincare plan (metric units, Desi food terms). It does not cover medical/diagnostic topics (e.g. PCOS, diabetes, thyroid) by design.
+
+## Tool
+- [Free Plan Generator](/): Enter basic details and get a personalized weight-loss + skincare plan, printable as PDF.
+
+## Diet articles
+- [Pet Ki Charbi Kaise Kam Kare](/blog/pet-ki-charbi-kaise-kam-kare): Step-by-step approach to reducing belly fat beyond crunches.
+- [Motapa Kaise Kam Kare](/blog/motapa-kaise-kam-kare): Sustainable weight loss without crash dieting.
+- [Weight Loss Diet Plan](/blog/weight-loss-diet-plan): Sample one-day diet chart.
+- [High Protein Vegetarian Diet for Muscle Gain](/blog/high-protein-vegetarian-diet-muscle-gain): Vegetarian/vegan protein sources for muscle gain.
+
+## Skin care articles
+- [Hand Cream for Dry Skin](/blog/hand-cream-dry-skin-ke-liye): Routine for hands dried out from frequent washing.
+- [Combination Skin Care Routine](/blog/combination-skin-care-routine): Zone-based routine for oily T-zone with dry cheeks.
+- [Facewash for Dry Skin](/blog/facewash-dry-skin-ke-liye): What to look for in a facewash for dry skin.
+- [Acne-Prone Skin Care Routine](/blog/acne-prone-skin-care-routine): Routine and product guidance for recurring pimples.
+
+## Notes
+- Content is general lifestyle guidance in Roman Urdu, not medical advice.
+- Full article index: /blog

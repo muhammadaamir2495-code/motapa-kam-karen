@@ -4,6 +4,7 @@ export const metadata = {
   title: "High Protein Vegetarian Diet — Muscle Gain Ke Liye | MeraSehat",
   description:
     "Bina meat ke bhi muscle gain mumkin hai — vegetarian aur vegan protein sources aur ek din ka sample high-protein diet plan.",
+  alternates: { canonical: "/blog/high-protein-vegetarian-diet-muscle-gain" },
 };
 
 export default function Page() {

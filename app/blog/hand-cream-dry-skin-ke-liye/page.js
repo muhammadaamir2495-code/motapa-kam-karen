@@ -4,6 +4,7 @@ export const metadata = {
   title: "Dry Hands Ke Liye Sahi Hand Cream Routine | MeraSehat",
   description:
     "Baar baar hath dhone se hone wali dryness ka ilaj — sahi hand cream aur routine jo waqai kaam karta hai.",
+  alternates: { canonical: "/blog/hand-cream-dry-skin-ke-liye" },
 };
 
 export default function Page() {

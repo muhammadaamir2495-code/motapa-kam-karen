@@ -4,6 +4,7 @@ export const metadata = {
   title: "Combination Skin Care Routine — Step by Step | MeraSehat",
   description:
     "T-zone oily aur gaal dry — combination skin ka sahi routine kya hona chahiye, step by step.",
+  alternates: { canonical: "/blog/combination-skin-care-routine" },
 };
 
 export default function Page() {

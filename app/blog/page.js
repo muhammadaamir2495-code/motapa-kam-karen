@@ -4,6 +4,7 @@ import { posts } from "@/lib/posts";
 export const metadata = {
   title: "Articles — MeraSehat",
   description: "Weight loss, diet aur skin care ke tips — Roman Urdu mein.",
+  alternates: { canonical: "/blog" },
 };
 
 const categories = [

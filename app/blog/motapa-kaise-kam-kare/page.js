@@ -4,6 +4,7 @@ export const metadata = {
   title: "Motapa Kaise Kam Kare — Bina Crash Diet Ke | MeraSehat",
   description:
     "Motapa kam karne ka sustainable tarika — diet, roz ki activity aur aadaton mein simple changes, bina bhooka rahe.",
+  alternates: { canonical: "/blog/motapa-kaise-kam-kare" },
 };
 
 export default function Page() {

@@ -4,6 +4,7 @@ export const metadata = {
   title: "Acne-Prone Skin Ke Liye Sahi Routine | MeraSehat",
   description:
     "Pimples baar baar ho rahe hain? Acne-prone skin ke liye kya use karen, kya avoid karen — simple routine.",
+  alternates: { canonical: "/blog/acne-prone-skin-care-routine" },
 };
 
 export default function Page() {

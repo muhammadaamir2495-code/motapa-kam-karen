@@ -3,6 +3,7 @@ import { Poppins, Inter } from "next/font/google";
 import "./globals.css";
 
 const gaId = process.env.NEXT_PUBLIC_GA_ID;
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://merasehat.example.com";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -19,15 +20,55 @@ const inter = Inter({
 });
 
 export const metadata = {
+  metadataBase: new URL(siteUrl),
   title: "MeraSehat — Weight Loss, Diet Plan & Skin Care Tips",
   description:
     "Motapa kam karne, pet ki charbi ghatane aur skin care ke liye free tips, diet plans aur apna personal sehat plan banane ka tool — Roman Urdu mein.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    url: siteUrl,
+    siteName: "MeraSehat",
+    title: "MeraSehat — Weight Loss, Diet Plan & Skin Care Tips",
+    description:
+      "Motapa kam karne, pet ki charbi ghatane aur skin care ke liye free tips, diet plans aur apna personal sehat plan banane ka tool — Roman Urdu mein.",
+  },
+  twitter: {
+    card: "summary",
+    title: "MeraSehat — Weight Loss, Diet Plan & Skin Care Tips",
+    description:
+      "Motapa kam karne, pet ki charbi ghatane aur skin care ke liye free tips, diet plans aur apna personal sehat plan banane ka tool — Roman Urdu mein.",
+  },
+};
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "MeraSehat",
+  url: siteUrl,
+  description:
+    "Free Roman Urdu diet, weight-loss aur skin-care planner tool aur guides for Pakistani/Indian users.",
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "MeraSehat",
+  url: siteUrl,
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${poppins.variable} ${inter.variable}`}>
       <body className="font-body">
+        <Script id="organization-jsonld" type="application/ld+json" strategy="afterInteractive">
+          {JSON.stringify(organizationJsonLd)}
+        </Script>
+        <Script id="website-jsonld" type="application/ld+json" strategy="afterInteractive">
+          {JSON.stringify(websiteJsonLd)}
+        </Script>
         {children}
         {gaId && (
           <>

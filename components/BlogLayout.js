@@ -1,11 +1,31 @@
 import Link from "next/link";
+import Script from "next/script";
 import { getRelatedPosts } from "@/lib/posts";
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://merasehat.example.com";
 
 export default function BlogLayout({ title, subtitle, slug, children }) {
   const relatedPosts = getRelatedPosts(slug);
 
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description: subtitle,
+    url: `${siteUrl}/blog/${slug}`,
+    inLanguage: "en",
+    publisher: {
+      "@type": "Organization",
+      name: "MeraSehat",
+      url: siteUrl,
+    },
+  };
+
   return (
     <main className="min-h-screen bg-bg">
+      <Script id={`article-jsonld-${slug}`} type="application/ld+json" strategy="afterInteractive">
+        {JSON.stringify(articleJsonLd)}
+      </Script>
       <header className="border-b border-line bg-surface/70 backdrop-blur">
         <div className="max-w-2xl mx-auto px-5 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">

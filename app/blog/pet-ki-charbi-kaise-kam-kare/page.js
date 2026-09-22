@@ -4,6 +4,7 @@ export const metadata = {
   title: "Pet Ki Charbi Kaise Kam Kare — Asaan Tarike | MeraSehat",
   description:
     "Pet ki charbi kam karne ke liye diet, exercise aur roz ki aadaton mein kya change karen — practical, step-by-step tarika.",
+  alternates: { canonical: "/blog/pet-ki-charbi-kaise-kam-kare" },
 };
 
 export default function Page() {
