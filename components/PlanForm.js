@@ -42,8 +42,9 @@ export default function PlanForm({ onGenerate, presetHeightCm }) {
   return (
     <form onSubmit={handleSubmit} className="grid gap-6 sm:grid-cols-2">
       <div>
-        <label className={labelClass}>Naam (optional)</label>
+        <label className={labelClass} htmlFor="name">Naam (optional)</label>
         <input
+          id="name"
           className={inputClass}
           type="text"
           value={form.name}
@@ -53,8 +54,9 @@ export default function PlanForm({ onGenerate, presetHeightCm }) {
       </div>
 
       <div>
-        <label className={labelClass}>Umar</label>
+        <label className={labelClass} htmlFor="age">Umar</label>
         <input
+          id="age"
           className={inputClass}
           type="number"
           min="14"
@@ -67,8 +69,8 @@ export default function PlanForm({ onGenerate, presetHeightCm }) {
       </div>
 
       <div>
-        <label className={labelClass}>Gender</label>
-        <select className={inputClass} value={form.gender} onChange={(e) => update("gender", e.target.value)}>
+        <label className={labelClass} htmlFor="gender">Gender</label>
+        <select id="gender" className={inputClass} value={form.gender} onChange={(e) => update("gender", e.target.value)}>
           <option value="female">Female</option>
           <option value="male">Male</option>
           <option value="other">Nahi batana</option>
@@ -76,8 +78,8 @@ export default function PlanForm({ onGenerate, presetHeightCm }) {
       </div>
 
       <div>
-        <label className={labelClass}>Off wala din</label>
-        <select className={inputClass} value={form.offDay} onChange={(e) => update("offDay", e.target.value)}>
+        <label className={labelClass} htmlFor="offDay">Off wala din</label>
+        <select id="offDay" className={inputClass} value={form.offDay} onChange={(e) => update("offDay", e.target.value)}>
           {["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"].map((d) => (
             <option key={d} value={d}>{d}</option>
           ))}
@@ -86,7 +88,7 @@ export default function PlanForm({ onGenerate, presetHeightCm }) {
       </div>
 
       <div>
-        <label className={labelClass}>Qad (cm)</label>
+        <label className={labelClass} htmlFor="heightCm">Qad (cm)</label>
         <input
           id="heightCm"
           className={inputClass}
@@ -101,8 +103,9 @@ export default function PlanForm({ onGenerate, presetHeightCm }) {
       </div>
 
       <div>
-        <label className={labelClass}>Wazan (kg)</label>
+        <label className={labelClass} htmlFor="weightKg">Wazan (kg)</label>
         <input
+          id="weightKg"
           className={inputClass}
           type="number"
           min="30"
@@ -115,8 +118,9 @@ export default function PlanForm({ onGenerate, presetHeightCm }) {
       </div>
 
       <div>
-        <label className={labelClass}>Uthne ka time</label>
+        <label className={labelClass} htmlFor="wakeTime">Uthne ka time</label>
         <input
+          id="wakeTime"
           className={inputClass}
           type="time"
           value={form.wakeTime}
@@ -125,8 +129,9 @@ export default function PlanForm({ onGenerate, presetHeightCm }) {
       </div>
 
       <div>
-        <label className={labelClass}>Sonay ka time</label>
+        <label className={labelClass} htmlFor="sleepTime">Sonay ka time</label>
         <input
+          id="sleepTime"
           className={inputClass}
           type="time"
           value={form.sleepTime}
@@ -135,8 +140,8 @@ export default function PlanForm({ onGenerate, presetHeightCm }) {
       </div>
 
       <div className="sm:col-span-2">
-        <label className={labelClass}>Rozana ka routine</label>
-        <select className={inputClass} value={form.routine} onChange={(e) => update("routine", e.target.value)}>
+        <label className={labelClass} htmlFor="routine">Rozana ka routine</label>
+        <select id="routine" className={inputClass} value={form.routine} onChange={(e) => update("routine", e.target.value)}>
           <option value="desk">Desk job</option>
           <option value="onfeet">Khari duty (nurse, teacher, retail...)</option>
           <option value="manual">Mehnat wala kaam</option>
@@ -149,8 +154,8 @@ export default function PlanForm({ onGenerate, presetHeightCm }) {
       </div>
 
       <div>
-        <label className={labelClass}>Khane ki pasand</label>
-        <select className={inputClass} value={form.dietPref} onChange={(e) => update("dietPref", e.target.value)}>
+        <label className={labelClass} htmlFor="dietPref">Khane ki pasand</label>
+        <select id="dietPref" className={inputClass} value={form.dietPref} onChange={(e) => update("dietPref", e.target.value)}>
           <option value="nonveg">Non-veg</option>
           <option value="egg">Egg tak</option>
           <option value="veg">Veg</option>
@@ -160,8 +165,8 @@ export default function PlanForm({ onGenerate, presetHeightCm }) {
       </div>
 
       <div>
-        <label className={labelClass}>Skin type</label>
-        <select className={inputClass} value={form.skinType} onChange={(e) => update("skinType", e.target.value)}>
+        <label className={labelClass} htmlFor="skinType">Skin type</label>
+        <select id="skinType" className={inputClass} value={form.skinType} onChange={(e) => update("skinType", e.target.value)}>
           <option value="dry">Dry</option>
           <option value="oily">Oily</option>
           <option value="combination">Combination</option>
@@ -172,8 +177,8 @@ export default function PlanForm({ onGenerate, presetHeightCm }) {
       </div>
 
       <div className="sm:col-span-2">
-        <label className={labelClass}>Asal maqsad</label>
-        <select className={inputClass} value={form.goal} onChange={(e) => update("goal", e.target.value)}>
+        <label className={labelClass} htmlFor="goal">Asal maqsad</label>
+        <select id="goal" className={inputClass} value={form.goal} onChange={(e) => update("goal", e.target.value)}>
           <option value="belly">Belly fat kam karna</option>
           <option value="weightloss">Overall wazan kam karna</option>
           <option value="weightgain">Wazan barhana</option>

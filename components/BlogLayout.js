@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getRelatedPosts, posts } from "@/lib/posts";
@@ -26,9 +25,10 @@ export default function BlogLayout({ title, subtitle, slug, children }) {
 
   return (
     <main className="min-h-screen bg-bg">
-      <Script id={`article-jsonld-${slug}`} type="application/ld+json" strategy="afterInteractive">
-        {JSON.stringify(articleJsonLd)}
-      </Script>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <Header />
 
       <article className="max-w-2xl mx-auto px-5 py-12">

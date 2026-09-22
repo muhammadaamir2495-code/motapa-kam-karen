@@ -29,8 +29,9 @@ export default function InchesToCmConverter({ onConvert }) {
 
       <div className="flex flex-col sm:flex-row sm:items-end gap-3">
         <div className="flex-1">
-          <label className="block text-sm font-medium text-ink/80 mb-1.5">Height (inches)</label>
+          <label className="block text-sm font-medium text-ink/80 mb-1.5" htmlFor="inchesInput">Height (inches)</label>
           <input
+            id="inchesInput"
             type="number"
             min="0"
             max="100"

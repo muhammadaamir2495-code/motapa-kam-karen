@@ -66,12 +66,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${poppins.variable} ${inter.variable}`}>
       <body className="font-body">
-        <Script id="organization-jsonld" type="application/ld+json" strategy="afterInteractive">
-          {JSON.stringify(organizationJsonLd)}
-        </Script>
-        <Script id="website-jsonld" type="application/ld+json" strategy="afterInteractive">
-          {JSON.stringify(websiteJsonLd)}
-        </Script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
         {children}
         {gaId && (
           <>

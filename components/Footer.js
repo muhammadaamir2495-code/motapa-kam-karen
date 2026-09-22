@@ -15,7 +15,7 @@ export default function Footer() {
           <Link href="/privacy-policy" className="hover:text-primary transition">Privacy Policy</Link>
           <Link href="/disclaimer" className="hover:text-primary transition">Disclaimer</Link>
         </div>
-        <p className="text-center text-[11px] text-muted/70">
+        <p className="text-center text-[11px] text-muted">
           © {new Date().getFullYear()} MeraSehat. All rights reserved.
         </p>
       </div>

@@ -19,7 +19,7 @@ module.exports = {
           DEFAULT: "#7A2048",
           light: "#F3DEE7",
         },
-        muted: "#8A7A6C",
+        muted: "#6E5F51",
         line: "#EADFCD",
       },
       fontFamily: {
