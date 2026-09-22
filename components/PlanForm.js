@@ -6,6 +6,7 @@ const inputClass =
   "w-full rounded-lg border border-line bg-white px-3.5 py-2.5 text-[15px] text-ink placeholder:text-muted/60 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition";
 
 const labelClass = "block text-sm font-medium text-ink/80 mb-1.5";
+const hintClass = "text-xs text-muted mt-1";
 
 export default function PlanForm({ onGenerate, presetHeightCm }) {
   const [form, setForm] = useState({
@@ -62,6 +63,7 @@ export default function PlanForm({ onGenerate, presetHeightCm }) {
           value={form.age}
           onChange={(e) => update("age", Number(e.target.value))}
         />
+        <p className={hintClass}>Min: 14 saal, Max: 80 saal</p>
       </div>
 
       <div>
@@ -95,6 +97,7 @@ export default function PlanForm({ onGenerate, presetHeightCm }) {
           value={form.heightCm}
           onChange={(e) => update("heightCm", Number(e.target.value))}
         />
+        <p className={hintClass}>Min: 120 cm, Max: 220 cm</p>
       </div>
 
       <div>
@@ -108,6 +111,7 @@ export default function PlanForm({ onGenerate, presetHeightCm }) {
           value={form.weightKg}
           onChange={(e) => update("weightKg", Number(e.target.value))}
         />
+        <p className={hintClass}>Min: 30 kg, Max: 200 kg</p>
       </div>
 
       <div>

@@ -41,6 +41,7 @@ export default function InchesToCmConverter({ onConvert }) {
             onChange={(e) => setInchesInput(e.target.value)}
             className="w-full rounded-lg border border-line bg-white px-3.5 py-2.5 text-[15px] text-ink placeholder:text-muted/60 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition"
           />
+          <p className="text-xs text-muted mt-1">Min: 0 inches, Max: 100 inches</p>
         </div>
 
         <div className="flex-1">
