@@ -11,8 +11,8 @@ module.exports = {
         bg: "#FFF7EC",
         surface: "#FFFFFF",
         primary: {
-          DEFAULT: "#C1651B",
-          dark: "#8F4A12",
+          DEFAULT: "#A6540E",
+          dark: "#7A3F0D",
           light: "#FBE8D3",
         },
         accent: {
