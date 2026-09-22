@@ -1,13 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const inputClass =
   "w-full rounded-lg border border-line bg-white px-3.5 py-2.5 text-[15px] text-ink placeholder:text-muted/60 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition";
 
 const labelClass = "block text-sm font-medium text-ink/80 mb-1.5";
 
-export default function PlanForm({ onGenerate }) {
+export default function PlanForm({ onGenerate, presetHeightCm }) {
   const [form, setForm] = useState({
     name: "",
     age: 25,
@@ -26,6 +26,12 @@ export default function PlanForm({ onGenerate }) {
   function update(key, value) {
     setForm((f) => ({ ...f, [key]: value }));
   }
+
+  useEffect(() => {
+    if (presetHeightCm) {
+      update("heightCm", presetHeightCm);
+    }
+  }, [presetHeightCm]);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -80,6 +86,7 @@ export default function PlanForm({ onGenerate }) {
       <div>
         <label className={labelClass}>Qad (cm)</label>
         <input
+          id="heightCm"
           className={inputClass}
           type="number"
           min="120"

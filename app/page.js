@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import Link from "next/link";
 import PlanForm from "@/components/PlanForm";
 import PlanResult from "@/components/PlanResult";
+import InchesToCmConverter from "@/components/InchesToCmConverter";
 import { generatePlan } from "@/lib/generatePlan";
 import { posts } from "@/lib/posts";
 
@@ -11,7 +12,13 @@ const featuredPosts = posts.slice(0, 3);
 
 export default function Home() {
   const [plan, setPlan] = useState(null);
+  const [presetHeightCm, setPresetHeightCm] = useState(null);
   const resultRef = useRef(null);
+
+  function handleConvertedHeight(cm) {
+    setPresetHeightCm(cm);
+    document.getElementById("heightCm")?.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
 
   function handleGenerate(formValues) {
     const result = generatePlan(formValues);
@@ -46,8 +53,9 @@ export default function Home() {
       </section>
 
       <section id="tool" className="no-print max-w-3xl mx-auto px-5 pb-16">
+        <InchesToCmConverter onConvert={handleConvertedHeight} />
         <div className="rounded-2xl border border-line bg-white shadow-sm px-6 py-7 sm:px-10 sm:py-9">
-          <PlanForm onGenerate={handleGenerate} />
+          <PlanForm onGenerate={handleGenerate} presetHeightCm={presetHeightCm} />
         </div>
       </section>
 
