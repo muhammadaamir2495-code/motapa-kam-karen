@@ -1,11 +1,13 @@
 import Link from "next/link";
+import Image from "next/image";
 import Script from "next/script";
-import { getRelatedPosts } from "@/lib/posts";
+import { getRelatedPosts, posts } from "@/lib/posts";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://merasehat.example.com";
 
 export default function BlogLayout({ title, subtitle, slug, children }) {
   const relatedPosts = getRelatedPosts(slug);
+  const heroImage = posts.find((post) => post.slug === slug)?.image;
 
   const articleJsonLd = {
     "@context": "https://schema.org",
@@ -51,7 +53,17 @@ export default function BlogLayout({ title, subtitle, slug, children }) {
         </nav>
 
         <h1 className="font-display text-3xl sm:text-4xl text-ink leading-tight mb-3">{title}</h1>
-        {subtitle && <p className="text-muted text-[17px] mb-8">{subtitle}</p>}
+        {subtitle && <p className="text-muted text-[17px] mb-6">{subtitle}</p>}
+        {heroImage && (
+          <Image
+            src={heroImage}
+            alt={title}
+            width={800}
+            height={450}
+            priority
+            className="w-full h-auto rounded-2xl border border-line mb-8"
+          />
+        )}
         <div className="prose-content space-y-5 text-[16px] leading-relaxed text-ink/90">
           {children}
         </div>
@@ -78,6 +90,13 @@ export default function BlogLayout({ title, subtitle, slug, children }) {
                 href={`/blog/${post.slug}`}
                 className="block rounded-xl border border-line bg-white px-4 py-4 hover:border-primary transition"
               >
+                <Image
+                  src={post.image}
+                  alt={post.title}
+                  width={400}
+                  height={225}
+                  className="w-full h-auto rounded-lg mb-3"
+                />
                 <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-primary">{post.category}</span>
                 <h2 className="font-display text-lg text-ink mt-2 leading-snug">{post.title}</h2>
               </Link>

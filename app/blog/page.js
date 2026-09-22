@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { posts } from "@/lib/posts";
 
 export const metadata = {
@@ -47,11 +48,20 @@ export default function BlogIndex() {
                   <Link
                     key={p.slug}
                     href={`/blog/${p.slug}`}
-                    className="block rounded-xl border border-line bg-white px-5 py-5 hover:border-primary transition"
+                    className="flex gap-4 items-center rounded-xl border border-line bg-white px-5 py-5 hover:border-primary transition"
                   >
-                    <span className="text-xs font-semibold tracking-wide text-primary uppercase">{p.category}</span>
-                    <h3 className="font-display text-xl text-ink mt-1 mb-1.5">{p.title}</h3>
-                    <p className="text-[15px] text-muted">{p.excerpt}</p>
+                    <Image
+                      src={p.image}
+                      alt={p.title}
+                      width={96}
+                      height={54}
+                      className="hidden sm:block h-[54px] w-[96px] shrink-0 rounded-lg object-cover"
+                    />
+                    <div>
+                      <span className="text-xs font-semibold tracking-wide text-primary uppercase">{p.category}</span>
+                      <h3 className="font-display text-xl text-ink mt-1 mb-1.5">{p.title}</h3>
+                      <p className="text-[15px] text-muted">{p.excerpt}</p>
+                    </div>
                   </Link>
                 ))}
               </div>

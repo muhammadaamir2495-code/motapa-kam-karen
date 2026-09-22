@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import PlanForm from "@/components/PlanForm";
 import PlanResult from "@/components/PlanResult";
 import InchesToCmConverter from "@/components/InchesToCmConverter";
@@ -39,17 +40,27 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="no-print max-w-3xl mx-auto px-5 pt-14 pb-10">
-        <p className="text-accent font-semibold text-sm tracking-wide mb-3">
-          Free diet &amp; skin care planner
-        </p>
-        <h1 className="font-display text-4xl sm:text-5xl text-ink leading-tight mb-5">
-          Motapa kam karen, skin ka khayal rakhen — sab ek jagah.
-        </h1>
-        <p className="text-ink/70 text-[17px] leading-relaxed max-w-xl">
-          Apni umar, routine, sone jagne ka waqt aur skin type bharen — plan foran ban kar niche aa
-          jayega. Print ya PDF ke tor pe save bhi kar sakte hain.
-        </p>
+      <section className="no-print max-w-3xl mx-auto px-5 pt-14 pb-10 grid sm:grid-cols-[1fr_auto] gap-8 items-center">
+        <div>
+          <p className="text-accent font-semibold text-sm tracking-wide mb-3">
+            Free diet &amp; skin care planner
+          </p>
+          <h1 className="font-display text-4xl sm:text-5xl text-ink leading-tight mb-5">
+            Motapa kam karen, skin ka khayal rakhen — sab ek jagah.
+          </h1>
+          <p className="text-ink/70 text-[17px] leading-relaxed max-w-xl">
+            Apni umar, routine, sone jagne ka waqt aur skin type bharen — plan foran ban kar niche aa
+            jayega. Print ya PDF ke tor pe save bhi kar sakte hain.
+          </p>
+        </div>
+        <Image
+          src="/images/hero-plan.webp"
+          alt="MeraSehat free diet and skin care plan tool"
+          width={800}
+          height={450}
+          priority
+          className="hidden sm:block w-56 h-auto rounded-2xl border border-line"
+        />
       </section>
 
       <section id="tool" className="no-print max-w-3xl mx-auto px-5 pb-16">
@@ -92,6 +103,13 @@ export default function Home() {
               href={`/blog/${p.slug}`}
               className="block rounded-xl border border-line bg-white px-5 py-5 hover:border-primary transition"
             >
+              <Image
+                src={p.image}
+                alt={p.title}
+                width={400}
+                height={225}
+                className="w-full h-auto rounded-lg mb-3"
+              />
               <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary">{p.category}</p>
               <p className="font-display text-[17px] text-ink leading-snug">{p.title}</p>
             </Link>
