@@ -40,7 +40,12 @@ export default function PlanForm({ onGenerate, presetHeightCm }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="grid gap-6 sm:grid-cols-2">
+    <form
+      onSubmit={handleSubmit}
+      toolname="generateHealthPlan"
+      tooldescription="Generate a personalized diet and skin care plan from age, height, weight, daily routine, sleep schedule, diet preference, skin type, and goal."
+      className="grid gap-6 sm:grid-cols-2"
+    >
       <div>
         <label className={labelClass} htmlFor="name">Naam (optional)</label>
         <input
@@ -70,7 +75,13 @@ export default function PlanForm({ onGenerate, presetHeightCm }) {
 
       <div>
         <label className={labelClass} htmlFor="gender">Gender</label>
-        <select id="gender" className={inputClass} value={form.gender} onChange={(e) => update("gender", e.target.value)}>
+        <select
+          id="gender"
+          className={inputClass}
+          value={form.gender}
+          onChange={(e) => update("gender", e.target.value)}
+          toolparamdescription="Biological sex used to calculate calorie and nutrition targets."
+        >
           <option value="female">Female</option>
           <option value="male">Male</option>
           <option value="other">Nahi batana</option>
@@ -79,7 +90,13 @@ export default function PlanForm({ onGenerate, presetHeightCm }) {
 
       <div>
         <label className={labelClass} htmlFor="offDay">Off wala din</label>
-        <select id="offDay" className={inputClass} value={form.offDay} onChange={(e) => update("offDay", e.target.value)}>
+        <select
+          id="offDay"
+          className={inputClass}
+          value={form.offDay}
+          onChange={(e) => update("offDay", e.target.value)}
+          toolparamdescription="Weekly day off, used to schedule rest days in the plan."
+        >
           {["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"].map((d) => (
             <option key={d} value={d}>{d}</option>
           ))}
@@ -141,7 +158,13 @@ export default function PlanForm({ onGenerate, presetHeightCm }) {
 
       <div className="sm:col-span-2">
         <label className={labelClass} htmlFor="routine">Rozana ka routine</label>
-        <select id="routine" className={inputClass} value={form.routine} onChange={(e) => update("routine", e.target.value)}>
+        <select
+          id="routine"
+          className={inputClass}
+          value={form.routine}
+          onChange={(e) => update("routine", e.target.value)}
+          toolparamdescription="Daily activity level, used to estimate calorie burn."
+        >
           <option value="desk">Desk job</option>
           <option value="onfeet">Khari duty (nurse, teacher, retail...)</option>
           <option value="manual">Mehnat wala kaam</option>
@@ -155,7 +178,13 @@ export default function PlanForm({ onGenerate, presetHeightCm }) {
 
       <div>
         <label className={labelClass} htmlFor="dietPref">Khane ki pasand</label>
-        <select id="dietPref" className={inputClass} value={form.dietPref} onChange={(e) => update("dietPref", e.target.value)}>
+        <select
+          id="dietPref"
+          className={inputClass}
+          value={form.dietPref}
+          onChange={(e) => update("dietPref", e.target.value)}
+          toolparamdescription="Dietary preference, used to filter which foods appear in the generated plan."
+        >
           <option value="nonveg">Non-veg</option>
           <option value="egg">Egg tak</option>
           <option value="veg">Veg</option>
@@ -166,7 +195,13 @@ export default function PlanForm({ onGenerate, presetHeightCm }) {
 
       <div>
         <label className={labelClass} htmlFor="skinType">Skin type</label>
-        <select id="skinType" className={inputClass} value={form.skinType} onChange={(e) => update("skinType", e.target.value)}>
+        <select
+          id="skinType"
+          className={inputClass}
+          value={form.skinType}
+          onChange={(e) => update("skinType", e.target.value)}
+          toolparamdescription="Skin type, used to select the recommended skin care routine."
+        >
           <option value="dry">Dry</option>
           <option value="oily">Oily</option>
           <option value="combination">Combination</option>
@@ -178,7 +213,13 @@ export default function PlanForm({ onGenerate, presetHeightCm }) {
 
       <div className="sm:col-span-2">
         <label className={labelClass} htmlFor="goal">Asal maqsad</label>
-        <select id="goal" className={inputClass} value={form.goal} onChange={(e) => update("goal", e.target.value)}>
+        <select
+          id="goal"
+          className={inputClass}
+          value={form.goal}
+          onChange={(e) => update("goal", e.target.value)}
+          toolparamdescription="The user's primary goal, which determines which advice the plan emphasizes."
+        >
           <option value="belly">Belly fat kam karna</option>
           <option value="weightloss">Overall wazan kam karna</option>
           <option value="weightgain">Wazan barhana</option>

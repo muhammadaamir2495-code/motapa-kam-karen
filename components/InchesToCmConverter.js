@@ -27,11 +27,20 @@ export default function InchesToCmConverter({ onConvert }) {
         Zyada tar log apna qad inches ya feet mein jaante hain — yahan foran cm mein convert karen.
       </p>
 
-      <div className="flex flex-col sm:flex-row sm:items-end gap-3">
+      <form
+        toolname="convertInchesToCm"
+        tooldescription="Convert a height given in inches to centimeters, and optionally apply the result to the plan form's height field."
+        onSubmit={(e) => {
+          e.preventDefault();
+          if (onConvert && cmValue) onConvert(Math.round(cmValue));
+        }}
+        className="flex flex-col sm:flex-row sm:items-end gap-3"
+      >
         <div className="flex-1">
           <label className="block text-sm font-medium text-ink/80 mb-1.5" htmlFor="inchesInput">Height (inches)</label>
           <input
             id="inchesInput"
+            name="inches"
             type="number"
             min="0"
             max="100"
@@ -40,6 +49,7 @@ export default function InchesToCmConverter({ onConvert }) {
             placeholder="Misal ke tor pe 65"
             value={inchesInput}
             onChange={(e) => setInchesInput(e.target.value)}
+            toolparamdescription="Height value in inches to convert to centimeters."
             className="w-full rounded-lg border border-line bg-white px-3.5 py-2.5 text-[15px] text-ink placeholder:text-muted/60 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition"
           />
           <p className="text-xs text-muted mt-1">Min: 0 inches, Max: 100 inches</p>
@@ -53,15 +63,14 @@ export default function InchesToCmConverter({ onConvert }) {
 
         {onConvert && (
           <button
-            type="button"
+            type="submit"
             disabled={!cmValue}
-            onClick={() => onConvert(Math.round(cmValue))}
             className="rounded-lg bg-primary px-5 py-2.5 text-[14px] font-semibold text-white hover:bg-primary-dark transition disabled:opacity-40 disabled:cursor-not-allowed"
           >
             Plan mein istemal karen
           </button>
         )}
-      </div>
+      </form>
 
       <p className="text-xs text-muted mt-3">1 inch = 2.54 cm</p>
 
