@@ -41,6 +41,9 @@ export const metadata = {
     description:
       "Motapa kam karne, pet ki charbi ghatane aur skin care ke liye free tips, diet plans aur apna personal sehat plan banane ka tool — Roman Urdu mein.",
   },
+  verification: {
+    google: "k5D17dwAHpaXUjlB20XPV5jXvFEsrlpGFt-R-HNAUAk",
+  },
 };
 
 const organizationJsonLd = {
