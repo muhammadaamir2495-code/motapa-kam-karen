@@ -9,6 +9,7 @@ export const metadata = {
 export default function Page() {
   return (
     <BlogLayout
+      slug="hand-cream-dry-skin-ke-liye"
       title="Dry Hands Ke Liye Sahi Hand Cream Routine"
       subtitle="Khaas un logon ke liye jo din mein baar baar hath dhote hain"
     >

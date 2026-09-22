@@ -5,12 +5,9 @@ import Link from "next/link";
 import PlanForm from "@/components/PlanForm";
 import PlanResult from "@/components/PlanResult";
 import { generatePlan } from "@/lib/generatePlan";
+import { posts } from "@/lib/posts";
 
-const featuredPosts = [
-  { slug: "pet-ki-charbi-kaise-kam-kare", title: "Pet Ki Charbi Kaise Kam Kare" },
-  { slug: "motapa-kaise-kam-kare", title: "Motapa Kaise Kam Kare" },
-  { slug: "hand-cream-dry-skin-ke-liye", title: "Dry Hands Ke Liye Sahi Hand Cream Routine" },
-];
+const featuredPosts = posts.slice(0, 3);
 
 export default function Home() {
   const [plan, setPlan] = useState(null);
@@ -69,7 +66,17 @@ export default function Home() {
       )}
 
       <section className="no-print max-w-3xl mx-auto px-5 pb-20">
-        <h2 className="font-display text-2xl text-ink mb-5">Latest Articles</h2>
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-5">
+          <h2 className="font-display text-2xl text-ink">Latest Articles</h2>
+          <div className="flex flex-wrap gap-2 text-xs font-medium">
+            <Link href="/blog#diet" className="rounded-full border border-line bg-white px-3 py-1.5 text-primary hover:border-primary transition">
+              Diet
+            </Link>
+            <Link href="/blog#skin" className="rounded-full border border-line bg-white px-3 py-1.5 text-primary hover:border-primary transition">
+              Skin
+            </Link>
+          </div>
+        </div>
         <div className="grid sm:grid-cols-3 gap-4">
           {featuredPosts.map((p) => (
             <Link
@@ -77,6 +84,7 @@ export default function Home() {
               href={`/blog/${p.slug}`}
               className="block rounded-xl border border-line bg-white px-5 py-5 hover:border-primary transition"
             >
+              <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary">{p.category}</p>
               <p className="font-display text-[17px] text-ink leading-snug">{p.title}</p>
             </Link>
           ))}

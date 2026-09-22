@@ -9,6 +9,7 @@ export const metadata = {
 export default function Page() {
   return (
     <BlogLayout
+      slug="combination-skin-care-routine"
       title="Combination Skin Care Routine"
       subtitle="Jab T-zone oily ho lekin gaal dry — ye sabse confusing skin type hai"
     >

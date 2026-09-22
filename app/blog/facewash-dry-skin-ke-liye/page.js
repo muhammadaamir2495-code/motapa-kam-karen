@@ -9,6 +9,7 @@ export const metadata = {
 export default function Page() {
   return (
     <BlogLayout
+      slug="facewash-dry-skin-ke-liye"
       title="Dry Skin Ke Liye Sahi Facewash"
       subtitle="Galat facewash dryness ko aur barha sakta hai"
     >

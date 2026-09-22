@@ -9,6 +9,7 @@ export const metadata = {
 export default function Page() {
   return (
     <BlogLayout
+      slug="motapa-kaise-kam-kare"
       title="Motapa Kaise Kam Kare"
       subtitle="Crash diet ke bina, sustainable tarike se wazan kam karen"
     >

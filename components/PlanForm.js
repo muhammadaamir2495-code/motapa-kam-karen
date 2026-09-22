@@ -129,8 +129,11 @@ export default function PlanForm({ onGenerate }) {
           <option value="desk">Desk job</option>
           <option value="onfeet">Khari duty (nurse, teacher, retail...)</option>
           <option value="manual">Mehnat wala kaam</option>
+          <option value="night">Night shift wala kaam</option>
           <option value="student">Student</option>
           <option value="home">Ghar sambhalne wali</option>
+          <option value="senior">Retired / senior citizen</option>
+          <option value="athlete">Sports / gym-heavy routine</option>
         </select>
       </div>
 
@@ -140,6 +143,8 @@ export default function PlanForm({ onGenerate }) {
           <option value="nonveg">Non-veg</option>
           <option value="egg">Egg tak</option>
           <option value="veg">Veg</option>
+          <option value="vegan">Vegan (bina dairy)</option>
+          <option value="jain">Jain (bina pyaz-lehsun)</option>
         </select>
       </div>
 
@@ -150,6 +155,7 @@ export default function PlanForm({ onGenerate }) {
           <option value="oily">Oily</option>
           <option value="combination">Combination</option>
           <option value="sensitive">Sensitive</option>
+          <option value="acne">Acne-prone</option>
           <option value="normal">Normal</option>
         </select>
       </div>
@@ -160,6 +166,7 @@ export default function PlanForm({ onGenerate }) {
           <option value="belly">Belly fat kam karna</option>
           <option value="weightloss">Overall wazan kam karna</option>
           <option value="weightgain">Wazan barhana</option>
+          <option value="muscletone">Muscle tone banana</option>
           <option value="maintain">Maintain karna</option>
           <option value="skinglow">Skin glow pe focus</option>
         </select>

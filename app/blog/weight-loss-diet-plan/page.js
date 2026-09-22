@@ -9,6 +9,7 @@ export const metadata = {
 export default function Page() {
   return (
     <BlogLayout
+      slug="weight-loss-diet-plan"
       title="Weight Loss Diet Plan"
       subtitle="Ek din ka sample chart jo follow karna asaan ho"
     >

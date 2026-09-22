@@ -1,18 +1,35 @@
 import Link from "next/link";
+import { getRelatedPosts } from "@/lib/posts";
 
-export default function BlogLayout({ title, subtitle, children }) {
+export default function BlogLayout({ title, subtitle, slug, children }) {
+  const relatedPosts = getRelatedPosts(slug);
+
   return (
     <main className="min-h-screen bg-bg">
       <header className="border-b border-line bg-surface/70 backdrop-blur">
         <div className="max-w-2xl mx-auto px-5 py-4 flex items-center justify-between">
-          <Link href="/" className="font-display text-lg text-ink">MeraSehat</Link>
-          <Link href="/blog" className="text-sm font-medium text-primary hover:text-primary-dark">
-            Sab Articles
+          <div className="flex items-center gap-3">
+            <Link href="/" className="font-display text-lg text-ink">MeraSehat</Link>
+            <span className="text-muted">/</span>
+            <Link href="/blog" className="text-sm font-medium text-primary hover:text-primary-dark">
+              Articles
+            </Link>
+          </div>
+          <Link href="/#tool" className="text-sm font-medium text-primary hover:text-primary-dark">
+            Free Plan Banayen
           </Link>
         </div>
       </header>
 
       <article className="max-w-2xl mx-auto px-5 py-12">
+        <nav aria-label="Breadcrumb" className="mb-6 flex flex-wrap items-center gap-2 text-xs text-muted">
+          <Link href="/" className="hover:text-primary">Home</Link>
+          <span>/</span>
+          <Link href="/blog" className="hover:text-primary">Articles</Link>
+          <span>/</span>
+          <span className="text-ink/70">{title}</span>
+        </nav>
+
         <h1 className="font-display text-3xl sm:text-4xl text-ink leading-tight mb-3">{title}</h1>
         {subtitle && <p className="text-muted text-[17px] mb-8">{subtitle}</p>}
         <div className="prose-content space-y-5 text-[16px] leading-relaxed text-ink/90">
@@ -30,6 +47,22 @@ export default function BlogLayout({ title, subtitle, children }) {
           >
             Free Plan Banayen
           </Link>
+        </div>
+
+        <div className="mt-12 border-t border-line pt-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">Continue reading</p>
+          <div className="mt-4 grid gap-4 sm:grid-cols-3">
+            {relatedPosts.map((post) => (
+              <Link
+                key={post.slug}
+                href={`/blog/${post.slug}`}
+                className="block rounded-xl border border-line bg-white px-4 py-4 hover:border-primary transition"
+              >
+                <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-primary">{post.category}</span>
+                <h2 className="font-display text-lg text-ink mt-2 leading-snug">{post.title}</h2>
+              </Link>
+            ))}
+          </div>
         </div>
       </article>
 

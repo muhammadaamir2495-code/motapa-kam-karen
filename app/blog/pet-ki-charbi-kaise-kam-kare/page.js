@@ -9,6 +9,7 @@ export const metadata = {
 export default function Page() {
   return (
     <BlogLayout
+      slug="pet-ki-charbi-kaise-kam-kare"
       title="Pet Ki Charbi Kaise Kam Kare"
       subtitle="Sirf crunches se nahi — pet ki charbi kam karne ka asli tarika samjhen"
     >
